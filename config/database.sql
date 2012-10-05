@@ -14,7 +14,7 @@
 -- Extend table 'tl_module'
 --
 CREATE TABLE `tl_module` (
-  `artundform_jahr` varchar(128) NULL default '2000',
+  `artundform_jahr` varchar(128) NULL default '2012',
   `artundform_ausstellungsnr` varchar(128) NULL default '1',
   `artundform_darstellung` varchar(128) NULL default '1'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

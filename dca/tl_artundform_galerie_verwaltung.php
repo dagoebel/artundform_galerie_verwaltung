@@ -121,7 +121,7 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 	(
 		'bildnr' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnur'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)

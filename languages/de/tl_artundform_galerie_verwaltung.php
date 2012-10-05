@@ -40,21 +40,20 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung'][''] = array('', '');
  */
 
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['creategalery'] = 'Neue Galerie anlegen';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'] = 'Bildernummer';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'] = 'Künstler';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'] = 'Titel';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'] = 'Jahr';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'] = 'Technik';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'] = 'Größe';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'] = 'Preis';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = 'Bild';
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = 'Ausstellungsnummer';
-
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'] = array('Bildnummer', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'] = array('Künstler', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'] = array('Titel', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'] = array('Jahr', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'] = array('Technik', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'] = array('Größe', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'] = array('Preis', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = array('Bildpfand', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', '');
 
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['new']    = array('', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['new']    = array('Einzelnes Werk anlegen', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['edit']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['copy']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['delete'] = array('', '');

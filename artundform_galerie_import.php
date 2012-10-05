@@ -76,8 +76,8 @@ class artundform_galerie_import extends BackendModule
 			//$objFile = new File($this->Input->get('datei'));
 			 if ($_FILES["file"]["type"] == 'text/csv')
                         {
-							$jahr = $this->Input->post('jahr');
-							$ausstellungsnr = $this->Input->post('ausstellungsnr');
+						$jahr = $this->Input->post('jahr');
+						$ausstellungsnr = $this->Input->post('ausstellungsnr');
 						$sqldelete = "DELETE FROM `tl_artundform_galerie_verwaltung` WHERE `jahr` = '".$jahr."' AND `ausstellungsnr` = '".$ausstellungsnr."'";
 						
 						
@@ -96,7 +96,12 @@ class artundform_galerie_import extends BackendModule
  
 						// Datenbankimport
 			  			$this->Database->prepare($sqlimport)->execute();
+						$this->redirect('contao/main.php?do=Galerie',true);
                         }
+				else{
+
+
+				}
 						
 					
 	

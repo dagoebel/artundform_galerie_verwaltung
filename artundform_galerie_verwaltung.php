@@ -63,8 +63,6 @@ class artundform_galerie_verwaltung extends Module
 	$darstellung = $moduleParams->artundform_darstellung;
 	
 	
-	
-	
     $objWerke = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE jahr = '".$jahr."' AND ausstellungsnr = '".$ausstellungsnr."' ORDER BY bildnr"); 
     while ($objWerke->next()) 
     { 
@@ -82,13 +80,7 @@ class artundform_galerie_verwaltung extends Module
 		'_ausstellungsnr' => $moduleParams->artundform_ausstellungsnr,
 		'_darstellung' => $moduleParams->artundform_darstellung
       ); 
-
-      if(strlen($objWerke->bild) == 0) 
-      { 
-        $newArr['bild'] = '/system/modules/artundform_galerie_verwaltung/default.png'; 
-      } 
- 
-      $arrWerke[] = $newArr; 
+	$arrWerke[] = $newArr; 
     } 
     $this->Template->Werke = $arrWerke; 
 		
