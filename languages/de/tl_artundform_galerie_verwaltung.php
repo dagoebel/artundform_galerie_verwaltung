@@ -48,6 +48,7 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'] = array('Tech
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'] = array('Größe', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'] = array('Preis', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = array('Bildpfand', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = array('Bildname', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', '');
 
 /**
