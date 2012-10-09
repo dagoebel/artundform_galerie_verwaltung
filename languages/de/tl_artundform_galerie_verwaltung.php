@@ -39,7 +39,7 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung'][''] = array('', '');
  * Reference
  */
 
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['creategalery'] = 'Neue Galerie anlegen';
+
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'] = array('Bildnummer', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'] = array('Künstler', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'] = array('Titel', '');
@@ -49,11 +49,13 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'] = array('Grö
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'] = array('Preis', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = array('Bildname', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['name'] = array('Ausstellungsname', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'] = array('Ordner', '');
 
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['new']    = array('Einzelnes Werk anlegen', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['new']    = array('Neue Ausstellung anlegen', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['edit']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['copy']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['delete'] = array('', '');

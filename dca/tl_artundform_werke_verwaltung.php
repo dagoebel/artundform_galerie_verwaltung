@@ -30,9 +30,9 @@
 
 
 /**
- * Table tl_artundform_galerie_verwaltung 
+ * Table tl_artundform_werke_verwaltung 
  */
-$GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
+$GLOBALS['TL_DCA']['tl_artundform_werke_verwaltung'] = array
 (
 
 	// Config
@@ -40,8 +40,7 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 	(
 		'dataContainer'               => 'Table',
 		'enableVersioning'            => true,
-		'ctable'					  => array('tl_artundform_werke_verwaltung'),
-		'switchToEdit'				  => true
+		'ptable'					  => 'tl_artundform_galerie_verwaltung',
 	),
 
 	// List
@@ -49,17 +48,26 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 	(
 		'sorting' => array
 		(
-			'mode'                    => 1,
-			'fields'                  => array('jahr','ausstellungsnr'),
-			'flag'                    => 1
+			'mode'                    => 4,
+			'fields'                  => array('bildnr'),
+			'panelLayout'             => 'search,limit',
+			'headerFields'            => array('name'),
+			'child_record_callback'   => array('tl_artundform_werke_verwaltung', 'zeigeWerke')
 		),
 		'label' => array
 		(
-			'fields'                  => array('ausstellungsnr','name'),
+			'fields'                  => array('titel','kuenstler'),
 			'format'                  => '%s - %s'
 		),
 		'global_operations' => array
 		(
+		'import' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['import'],
+				'href'                => 'key=importwerke',
+				'class'               => 'header_new',
+			
+			),
 			'all' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
@@ -72,37 +80,36 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 		(
 			'edit' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['edit'],
-				'href'                => 'table=tl_artundform_werke_verwaltung',
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['edit'],
+				'href'                => 'act=edit',
 				'icon'                => 'edit.gif'
 			),
 			'copy' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
-				'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
+				'attributes'          => 'onclick="if (!confirm(\'  : '.$GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
 			),
 			'show' => array
 			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
 		)
 	),
-
 	// Palettes
 	'palettes' => array
 	(
 		'__selector__'                => array(''),
-		'default'                     => 'name,jahr,ausstellungsnr,ordner'
+		'default'                     => 'titel,kuenstler,bildnr,jahr,technik,groesse,preis,bild'
 	),
 
 	// Subpalettes
@@ -114,60 +121,30 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 	// Fields
 	'fields' => array
 	(
-		'name' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['name'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
 		'jahr' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['jahr'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
-		'ausstellungsnr' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'ordner' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'],
-			'exclude'                 => true,
-			'inputType'               => 'fileTree',
-			'eval'                    => array('files'=>false, 'fieldType'=>'radio')
-		),
-	
-	
 		'bildnr' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'ausstellungsnr' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['bildnr'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
 		'kuenstler' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['kuenstler'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
 		'titel' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['titel'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
@@ -175,33 +152,58 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 		
 		'technik' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['technik'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
 		'groesse' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['groesse'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
 		'preis' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['preis'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		),
 		'bild' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['bild'],
 			'exclude'                 => false,
 			'inputType'               => 'text',
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		)
 	)
 );
+			
+													
+class tl_artundform_werke_verwaltung extends Backend
+{
 
+	public function zeigeWerke($arrRow)
+	{
+	
+	return '<div class="cte_type"><strong> '.$arrRow['titel'] . '</strong> - '.$arrRow['kuenstler']. '</div>
+<div class="limit_height' . (!$GLOBALS['TL_CONFIG']['doNotCollapse'] ? '
+h0' : '') . 'block">
+Nr.  : '.$arrRow['bildnr'].'<br />
+Künstler  : '.$arrRow['kuenstler'].'<br />
+Titel  : '.$arrRow['titel'].'<br />
+Jahr  : '.$arrRow['jahr'].'<br />
+Technik  : '.$arrRow['technik'].'<br />
+Grösse cm  : '.$arrRow['groesse'].'<br />
+Preis  : '.$arrRow['preis'].'<br /><br />
+<img src="'.$arrRow['bild'].'" alt=""><br />
+
+
+
+</div>' . "\n";
+	}
+	
+}
 ?>

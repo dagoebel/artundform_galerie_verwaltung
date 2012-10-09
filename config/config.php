@@ -60,15 +60,13 @@
  
  
  // Back end module 
-array_insert($GLOBALS['BE_MOD'], 0, array( 
-    'Art + Form' => array( 
-      'Galerie' => array 
+array_insert($GLOBALS['BE_MOD']['content'], 0, array( 
+      'Art-Form Galerie' => array 
       ( 
-        'tables' => array('tl_artundform_galerie_verwaltung'), 
-		'import'     => array('artundform_galerie_import', 'generate'),
+        'tables' => array('tl_artundform_galerie_verwaltung','tl_artundform_werke_verwaltung'), 
+		'importwerke'     => array('artundform_werke_importieren', 'generate'),
         'icon'   => 'system/modules/artundform_galerie_verwaltung/icon.png'
       )
-    ) 
   ) 
 );
 

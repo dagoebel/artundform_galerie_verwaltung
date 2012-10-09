@@ -1,0 +1,96 @@
+<div class="<?php echo $this->class; ?>"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<?php if ($this->headline): ?>
+<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+<?php endif; ?>
+
+<?php if ($this->Werke[1]['_darstellung']==1): ?>
+<table id="liste">
+  <thead>
+    <tr>
+      <th>Nr</th>
+      <th>Künstler</th>
+      <th>Titel</th>
+      <th>Jahr</th>
+      <th>Technik</th>
+      <th>Größe</th>
+	  <th>Preis</th>
+       <th>Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php foreach ($this->Werke as $werk): ?>
+  <tr>
+  <td><?php echo $werk['bildnr']; ?>
+  </td>
+   <td><?php echo $werk['kuenstler']; ?>
+  </td>
+   <td><?php echo $werk['titel']; ?>
+  </td>
+   <td><?php echo $werk['jahr']; ?>
+  </td>
+   <td><?php echo $werk['technik']; ?>
+  </td>
+   <td><?php echo $werk['groesse']; ?>
+  </td>
+   <td><?php echo $werk['preis']; ?>
+  </td>
+   <td>
+   <a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo $werk['bildnr']; ?> - <?php echo $werk['kuenstler']; ?>. <?php echo $werk['titel']; ?>">&gt;&gt;</a>
+  </td>
+  </tr><?php endforeach; ?>
+  </tbody>
+</table>
+<?php endif; ?>
+
+
+
+<?php if ($this->Werke[1]['_darstellung']=='2'): ?>
+<?php foreach ($this->Werke as $werk): ?>
+<img src="tl_files/artundform_content/galerie/ausstellungen/<?php echo $werk['jahr']; ?>/<?php echo $werk['_ausstellungsnr']; ?>/<?php echo $werk['bild']; ?>" alt="<?php echo $werk['titel']; ?>" title="<?php echo $werk['titel']; ?>">
+<?php endforeach; ?>
+<?php endif; ?>
+
+
+<?php if ($this->Werke[1]['_darstellung']=='3'): ?>
+<table id="liste">
+  <thead>
+    <tr>
+      <th>Nr</th>
+      <th>Künstler</th>
+      <th>Titel</th>
+      <th>Jahr</th>
+      <th>Technik</th>
+      <th>Größe</th>
+	  <th>Preis</th>
+	   <th>Bild</th>
+       <th>Anfrage</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php foreach ($this->Werke as $werk): ?>
+  <tr>
+  <td><?php echo $werk['bildnr']; ?>
+  </td>
+   <td><?php echo $werk['kuenstler']; ?>
+  </td>
+   <td><?php echo $werk['titel']; ?>
+  </td>
+   <td><?php echo $werk['jahr']; ?>
+  </td>
+   <td><?php echo $werk['technik']; ?>
+  </td>
+   <td><?php echo $werk['groesse']; ?>
+  </td>
+   <td><?php echo $werk['preis']; ?>
+  </td>
+  <td>
+  <img src="tl_files/artundform_content/galerie/ausstellungen/<?php echo $werk['jahr']; ?>/<?php echo $werk['_ausstellungsnr']; ?>/<?php echo $werk['bild']; ?>" alt="<?php echo $werk['titel']; ?>" title="<?php echo $werk['titel']; ?>">
+  </td>
+   <td>
+   <a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo $werk['bildnr']; ?> - <?php echo $werk['kuenstler']; ?>. <?php echo $werk['titel']; ?>">&gt;&gt;</a>
+  </td>
+  </tr><?php endforeach; ?>
+  </tbody>
+</table>
+<?php endif; ?>
+</div>

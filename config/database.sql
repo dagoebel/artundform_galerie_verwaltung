@@ -27,14 +27,30 @@ CREATE TABLE `tl_artundform_galerie_verwaltung` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `sorting` int(10) unsigned NOT NULL default '0',
   `tstamp` int(10) unsigned NOT NULL default '0',
+  `name` varchar(128) NULL default NULL,
+  `jahr` varchar(128) NULL default NULL,
+  `ausstellungsnr` varchar(128) NULL default NULL,
+  `ordner` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- 
+-- Table `tl_artundform_werke_verwaltung`
+-- 
+
+CREATE TABLE `tl_artundform_werke_verwaltung` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `pid` int(10) unsigned NOT NULL default '0',
+  `sorting` int(10) unsigned NOT NULL default '0',
+  `tstamp` int(10) unsigned NOT NULL default '0',
   `bildnr` varchar(128) NULL default NULL,
   `kuenstler` varchar(128) NULL default NULL,
   `titel` varchar(128) NULL default NULL,
   `jahr` varchar(128) NULL default NULL,
-  `ausstellungsnr` varchar(128) NULL default NULL,
   `technik` varchar(128) NULL default NULL,
   `groesse` varchar(128) NULL default NULL,
   `preis` varchar(128) NULL default NULL,
   `bild` varchar(128) NULL default NULL,
   PRIMARY KEY  (`id`)
+  KEY `pid` (`pid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
