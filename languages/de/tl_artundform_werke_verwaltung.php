@@ -52,7 +52,7 @@ $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['ausstellungsnr'] = array(
 /**
  * Buttons
  */
-$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['new']    = array('Neues Werk anlegen', '');
+$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['new']    = array('Einzelnes Werk anlegen', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['edit']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['copy']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['delete'] = array('', '');

@@ -28,7 +28,6 @@
  * @filesource
  */
 
-
 /**
  * Table tl_artundform_werke_verwaltung 
  */
@@ -180,14 +179,11 @@ $GLOBALS['TL_DCA']['tl_artundform_werke_verwaltung'] = array
 		)
 	)
 );
-			
-													
+															
 class tl_artundform_werke_verwaltung extends Backend
 {
-
 	public function zeigeWerke($arrRow)
 	{
-	
 	return '<div class="cte_type"><strong> '.$arrRow['titel'] . '</strong> - '.$arrRow['kuenstler']. '</div>
 <div class="limit_height' . (!$GLOBALS['TL_CONFIG']['doNotCollapse'] ? '
 h0' : '') . 'block">
@@ -197,13 +193,9 @@ Titel  : '.$arrRow['titel'].'<br />
 Jahr  : '.$arrRow['jahr'].'<br />
 Technik  : '.$arrRow['technik'].'<br />
 Grösse cm  : '.$arrRow['groesse'].'<br />
-Preis  : '.$arrRow['preis'].'<br /><br />
-<img src="'.$arrRow['bild'].'" alt=""><br />
-
-
-
+Preis  : '.$arrRow['preis'].'<br />
+Bild  : '.$arrRow['bild'].'<br />
 </div>' . "\n";
 	}
-	
 }
 ?>

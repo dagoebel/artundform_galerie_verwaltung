@@ -36,7 +36,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['artundform_jahr'] = array
 ( 
     'label'                   => &$GLOBALS['TL_LANG']['tl_module']['artundform_jahr'], 
     'default'                 => '2000', 
-    'exclude'                 => true, 
+    'exclude'                 => false, 
     'inputType'               => 'select', 
     'options'                 => array('2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'), 
     'reference'               => &$GLOBALS['TL_LANG']['tl_module']['artundform_jahr_options'], 
@@ -46,7 +46,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['artundform_ausstellungsnr'] = array
 ( 
     'label'                   => &$GLOBALS['TL_LANG']['tl_module']['artundform_ausstellungsnr'], 
     'default'                 => '1', 
-    'exclude'                 => true, 
+    'exclude'                 => false, 
     'inputType'               => 'select', 
     'options'                 => array('1','2','3','4','5','6','7','8','9','10'), 
     'reference'               => &$GLOBALS['TL_LANG']['tl_module']['artundform_ausstellungsnr_options'], 
@@ -57,7 +57,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['artundform_darstellung'] = array
 ( 
     'label'                   => &$GLOBALS['TL_LANG']['tl_module']['artundform_darstellung'], 
     'default'                 => '1', 
-    'exclude'                 => true, 
+    'exclude'                 => false, 
     'inputType'               => 'select', 
     'options'                 => array('1','2','3'), 
     'reference'               => &$GLOBALS['TL_LANG']['tl_module']['artundform_darstellung_options'], 

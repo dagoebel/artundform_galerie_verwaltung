@@ -62,8 +62,11 @@ class artundform_galerie_verwaltung extends Module
 	$ausstellungsnr = $moduleParams->artundform_ausstellungsnr;
 	$darstellung = $moduleParams->artundform_darstellung;
 	
+	$ppid = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE jahr = '".$jahr."' AND ausstellungsnr = '".$ausstellungsnr."'"); 
+	$pid = $ppid->id;
+	$ordner = $ppid->ordner;
 	
-    $objWerke = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE jahr = '".$jahr."' AND ausstellungsnr = '".$ausstellungsnr."' ORDER BY bildnr"); 
+    $objWerke = $this->Database->execute("SELECT * FROM tl_artundform_werke_verwaltung WHERE pid = '".$pid."' ORDER BY bildnr"); 
     while ($objWerke->next()) 
     { 
       $newArr = array 
@@ -78,7 +81,9 @@ class artundform_galerie_verwaltung extends Module
         'bild' => $objWerke->bild,
 		'_jahr' => $moduleParams->artundform_jahr,
 		'_ausstellungsnr' => $moduleParams->artundform_ausstellungsnr,
-		'_darstellung' => $moduleParams->artundform_darstellung
+		'_darstellung' => $moduleParams->artundform_darstellung,
+		'_ausstellungsname' => $ppid->name,
+		'_ordner' => $ppid->ordner
       ); 
 	$arrWerke[] = $newArr; 
     } 
@@ -86,6 +91,4 @@ class artundform_galerie_verwaltung extends Module
 		
 	}
 }
-
-
 ?>

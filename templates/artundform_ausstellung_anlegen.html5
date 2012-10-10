@@ -1,18 +1,11 @@
 <div id="artundform_ausstellung_anlegen">
-
 <h2 class="sub_headline">Neue Ausstellung anlegen</h2>
-
 <form action="<?php echo $this->action; ?>" class="tl_form" method="post" enctype="multipart/form-data">
-
 <div class="tl_formbody_edit">
 <input type="hidden" name="FORM_SUBMIT" value="artundform_galerie_import">
 <input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
-
  <h3><label for="name">Name der Ausstellung</label></h3>
-
 <input type="text" id="name" size="80" value="">
-
-
  <h3><label for="jahr">Jahr</label></h3>
   <select name="jahr" id="jahr" class="tl_select">
       <option>2000</option>
@@ -20,23 +13,23 @@
       <option>2002</option>
       <option>2003</option>
       <option>2004</option>
-        <option>2005</option>
-          <option>2006</option>
-            <option>2007</option>
-              <option>2008</option>
-                <option>2009</option>
-                  <option>2010</option>
-                    <option>2011</option>
-                      <option>2012</option>
-                      <option>2012</option>
-                      <option>2013</option>
-                      <option>2014</option>
-                      <option>2015</option>
-                      <option>2016</option>
-                      <option>2017</option>
-                      <option>2018</option>
-                      <option>2019</option>
-                      <option>2020</option>
+      <option>2005</option>
+      <option>2006</option>
+      <option>2007</option>
+      <option>2008</option>
+      <option>2009</option>
+      <option>2010</option>
+      <option>2011</option>
+      <option>2012</option>
+      <option>2012</option>
+      <option>2013</option>
+      <option>2014</option>
+      <option>2015</option>
+      <option>2016</option>
+      <option>2017</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
     </select>
     
      <h3><label for="nummer">Nummer</label></h3>
@@ -46,27 +39,19 @@
       <option>3</option>
       <option>4</option>
       <option>5</option>
-        <option>6</option>
-          <option>7</option>
-            <option>8</option>
-              <option>9</option>
-                <option>10</option>
-                
-    </select>
-
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+   </select>
 <div class="tl_tbox block">
-
      <h3><label for="file">CSV-Datei</label> (Format: Künstler;Titel;Technik;Größe;Preis;Bild;Bildnummer)</h3>
-
   <input type="file" name="file" id="file"" size="40" maxlength="100000">
-  
 </div>
 </div>
-
 <div class="tl_submit_container">
   <input type="submit" name="csvfile" class="tl_submit" value="Neue Ausstellung anlegen"> 
 </div>
 </form>
-
-
 </div>

@@ -39,26 +39,18 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung'][''] = array('', '');
  * Reference
  */
 
-
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'] = array('Bildnummer', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'] = array('Künstler', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'] = array('Titel', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'] = array('Jahr', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'] = array('Technik', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'] = array('Größe', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'] = array('Preis', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'] = array('Bildname', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'] = array('Ausstellungsjahr', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', 'Diese dient zur späteren Auswahl im Modul.');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['name'] = array('Ausstellungsname', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'] = array('Ordner', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'] = array('Vorschaubilder ', 'Bitte wählen Sie hier den Ordner, in dem sich die Vorschaubilder befinden.');
 
 /**
  * Buttons
  */
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['new']    = array('Neue Ausstellung anlegen', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['edit']   = array('', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['copy']   = array('', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['delete'] = array('', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['show']   = array('', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['edit']   = array('Ausstellung bearbeiten', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['copy']   = array('Ausstellung duplizieren', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['delete'] = array('Ausstellung löschen', '');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['show']   = array('Ausstellung anzeigen', '');
 
 ?>

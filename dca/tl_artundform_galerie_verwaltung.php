@@ -124,16 +124,22 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 		'jahr' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
+			'default'                 => '2000', 
+    		'exclude'                 => false, 
+    		'inputType'               => 'select', 
+    		'options'                 => array('2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'), 
+    		'reference'               => &$GLOBALS['TL_LANG']['tl_module']['artundform_jahr_options'], 
+    		'eval'                    => array('mandatory'=>true) 
 		),
 		'ausstellungsnr' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
+			'default'                 => '1', 
+    		'exclude'                 => false, 
+    		'inputType'               => 'select', 
+    		'options'                 => array('1','2','3','4','5','6','7','8','9','10'), 
+    		'reference'               => &$GLOBALS['TL_LANG']['tl_module']['artundform_ausstellungsnr_options'], 
+    		'eval'                    => array('mandatory'=>true) 
 		),
 		'ordner' => array
 		(
@@ -141,65 +147,6 @@ $GLOBALS['TL_DCA']['tl_artundform_galerie_verwaltung'] = array
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
 			'eval'                    => array('files'=>false, 'fieldType'=>'radio')
-		),
-	
-	
-		'bildnr' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bildnr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'ausstellungsnr' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'kuenstler' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['kuenstler'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'titel' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['titel'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		
-		'technik' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['technik'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'groesse' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['groesse'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'preis' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['preis'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
-		),
-		'bild' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['bild'],
-			'exclude'                 => false,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255)
 		)
 	)
 );

@@ -34,10 +34,10 @@
  */
 $GLOBALS['TL_LANG']['MOD'][''] = array('', '');
 
-$GLOBALS['TL_LANG']['tl_module']['sort_legend']     = 'Filter und Sortierung'; 
+$GLOBALS['TL_LANG']['tl_module']['sort_legend']     = 'Auswahl des Jahres und der Ausstellungsnummer'; 
 
-$GLOBALS['TL_LANG']['tl_module']['artundform_jahr'] = array('Jahr', '');
-$GLOBALS['TL_LANG']['tl_module']['artundform_ausstellungsnr'] = array('Ausstellungsnummer', '');
+$GLOBALS['TL_LANG']['tl_module']['artundform_jahr'] = array('Ausstellungsjahr', '');
+$GLOBALS['TL_LANG']['tl_module']['artundform_ausstellungsnr'] = array('Ausstellungsnummer', 'Bitte wählen Sie hier die korrespondierende Ausstellungsnummer.');
 $GLOBALS['TL_LANG']['tl_module']['artundform_darstellung'] = array('Darstellung als', '');
 
 

@@ -70,7 +70,6 @@ array_insert($GLOBALS['BE_MOD']['content'], 0, array(
   ) 
 );
 
-
 /**
  * -------------------------------------------------------------------------
  * FRONT END MODULES
@@ -90,7 +89,7 @@ array_insert($GLOBALS['BE_MOD']['content'], 0, array(
  * Use function array_insert() to modify an existing CTE array.
  */
  
- array_insert($GLOBALS['FE_MOD']['Galerie Verwaltung'], 0, array 
+ array_insert($GLOBALS['FE_MOD']['Art-Form Galerie'], 0, array 
 ( 
     'artundform_galerie_verwaltung'	=> 'artundform_galerie_verwaltung'
 ));

@@ -62,26 +62,37 @@ class artundform_werke_importieren extends BackendModule
 		$this->objDc = func_get_arg(0);
 		return parent::generate();
 	}
-
-
+	
 	/**
 	 * Generate module
 	 */
 	protected function compile()
 	{
+	
+	function createMeta($csv_datei,$ordner,$pid)
+	{
+		$fh = fopen(TL_ROOT . '/' . $ordner . '/meta.txt', 'w');
+		$result = mysql_query("SELECT bild,kuenstler,titel,jahr,technik,groesse,preis,bildnr FROM `tl_artundform_werke_verwaltung` WHERE `pid`='".$pid."' ORDER BY bildnr");
+
+		while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+			fwrite($fh, $row[0]. ' = '.$row[1].'. '.$row[2].'<br>'.$row[3].'. '.$row[4].'. '.$row[5].' cm. '.$row[6].' EUR  |   | Anfrage zu Bild Nr. '.$row[7]. ' - '.$row[1].'. '.$row[2].' | Bild Nr. '.$row[7]);
+			fwrite($fh, "\n");
+	}
+	fclose($fh);
+	}
 		// Create files
 		if ($this->Input->post('FORM_SUBMIT') == 'artundform_werke_importieren')
 		{
-
 			//$objFile = new File($this->Input->get('datei'));
 			 if ($_FILES["file"]["type"] == 'text/csv')
                         {
 							
 						$pid = $this->id;
 						
+						$galerie = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE `id` = ".$pid);
+						$ordner = $galerie->ordner;
+	
 						$sqldelete = "DELETE FROM `tl_artundform_werke_verwaltung` WHERE `pid` = ".$pid;
-						
-						
 						
 						// Datenbankclear
 			  			$this->Database->prepare($sqldelete)->execute();
@@ -96,23 +107,17 @@ class artundform_werke_importieren extends BackendModule
 													(`bildnr`,`kuenstler`, `titel`, `jahr`, `technik`, `groesse`, `preis`, `bild`)
 													SET `pid`='".$pid."'";
 												
- 
 						// Datenbankimport
 			  			$this->Database->prepare($sqlimport)->execute();
+						
+						createMeta($csv_datei,$ordner,$pid);
+						
 						$this->redirect('contao/main.php?do=Art-Form%20Galerie&table=tl_artundform_werke_verwaltung',true);
                         }
-				else{
-
-
-				}
-						
-					
 	
 		}
 			
 	}
 
-
 }
-
 ?>

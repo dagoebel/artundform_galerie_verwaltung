@@ -43,7 +43,7 @@ CREATE TABLE `tl_artundform_werke_verwaltung` (
   `pid` int(10) unsigned NOT NULL default '0',
   `sorting` int(10) unsigned NOT NULL default '0',
   `tstamp` int(10) unsigned NOT NULL default '0',
-  `bildnr` varchar(128) NULL default NULL,
+  `bildnr` int(10) unsigned NOT NULL default '0',
   `kuenstler` varchar(128) NULL default NULL,
   `titel` varchar(128) NULL default NULL,
   `jahr` varchar(128) NULL default NULL,
