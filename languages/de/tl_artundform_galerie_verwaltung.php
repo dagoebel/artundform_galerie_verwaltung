@@ -42,7 +42,7 @@ $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung'][''] = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['jahr'] = array('Ausstellungsjahr', '');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ausstellungsnr'] = array('Ausstellungsnummer', 'Diese dient zur späteren Auswahl im Modul.');
 $GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['name'] = array('Ausstellungsname', '');
-$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'] = array('Vorschaubilder ', 'Bitte wählen Sie hier den Ordner, in dem sich die Vorschaubilder befinden.');
+$GLOBALS['TL_LANG']['tl_artundform_galerie_verwaltung']['ordner'] = array('Ordner der Vorschaubilder ', 'Bitte wählen Sie hier den Ordner, in dem sich die Vorschaubilder befinden.');
 
 /**
  * Buttons

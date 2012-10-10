@@ -57,6 +57,6 @@ $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['edit']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['copy']   = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['delete'] = array('', '');
 $GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['show']   = array('', '');
-$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['import']    = array('Neue Werke importieren', '');
-
+$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['import']    = array('Werke importieren', '');
+$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['createmeta']    = array('Meta-Datei erstellen', '');
 ?>

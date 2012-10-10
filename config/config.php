@@ -65,6 +65,7 @@ array_insert($GLOBALS['BE_MOD']['content'], 0, array(
       ( 
         'tables' => array('tl_artundform_galerie_verwaltung','tl_artundform_werke_verwaltung'), 
 		'importwerke'     => array('artundform_werke_importieren', 'generate'),
+		'createmeta'     => array('artundform_werke_meta_erstellen', 'generate'),
         'icon'   => 'system/modules/artundform_galerie_verwaltung/icon.png'
       )
   ) 

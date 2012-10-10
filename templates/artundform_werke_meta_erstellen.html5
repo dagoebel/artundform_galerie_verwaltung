@@ -1,0 +1,12 @@
+<div id="artundform_werke_meta_erstellen">
+<h2 class="sub_headline">Meta-Datei für Galerie-Rundgang erstellen</h2>
+<form action="<?php echo $this->action; ?>" class="tl_form" method="post" enctype="multipart/form-data">
+<div class="tl_formbody_edit">
+<input type="hidden" name="FORM_SUBMIT" value="artundform_werke_meta_erstellen">
+<input type="hidden" name="REQUEST_TOKEN" value="<?php echo REQUEST_TOKEN; ?>">
+</div>
+<div class="tl_submit_container">
+  <input type="submit"  class="tl_submit" value="Meta-Datei erstellen" onclick="return confirm('ACHTUNG: Die bestehende Meta-Datei für diese Ausstellung wird gelöscht und anhand der angelegten Werke neu erstellt. Wollen Sie dies wirklich?');"> 
+</div>
+</form>
+</div>

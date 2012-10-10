@@ -67,6 +67,13 @@ $GLOBALS['TL_DCA']['tl_artundform_werke_verwaltung'] = array
 				'class'               => 'header_new',
 			
 			),
+			'createMeta' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_artundform_werke_verwaltung']['createmeta'],
+				'href'                => 'key=createmeta',
+				'class'               => 'header_new',
+			
+			),
 			'all' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
