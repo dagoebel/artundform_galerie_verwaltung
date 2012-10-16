@@ -60,7 +60,7 @@
  
  
  // Back end module 
-array_insert($GLOBALS['BE_MOD']['content'], 0, array( 
+array_insert($GLOBALS['BE_MOD']['content'], 3, array( 
       'Art-Form Galerie' => array 
       ( 
         'tables' => array('tl_artundform_galerie_verwaltung','tl_artundform_werke_verwaltung'), 

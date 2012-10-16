@@ -71,7 +71,8 @@ class artundform_werke_importieren extends BackendModule
 	
 	function createMeta($csv_datei,$ordner,$pid)
 	{
-		$fh = fopen(TL_ROOT . '/' . $ordner . '/meta.txt', 'w');
+		
+		$fh = fopen(TL_ROOT . '/' . $ordner . '/meta_rundgang.txt', 'w');
 		$result = mysql_query("SELECT bild,kuenstler,titel,jahr,technik,groesse,preis,bildnr FROM `tl_artundform_werke_verwaltung` WHERE `pid`='".$pid."' ORDER BY bildnr");
 
 		while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
@@ -83,10 +84,7 @@ class artundform_werke_importieren extends BackendModule
 		// Create files
 		if ($this->Input->post('FORM_SUBMIT') == 'artundform_werke_importieren')
 		{
-			//$objFile = new File($this->Input->get('datei'));
-			 if ($_FILES["file"]["type"] == 'text/csv')
-                        {
-							
+
 						$pid = $this->id;
 						
 						$galerie = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE `id` = ".$pid);
@@ -113,7 +111,7 @@ class artundform_werke_importieren extends BackendModule
 						createMeta($csv_datei,$ordner,$pid);
 						
 						$this->redirect('contao/main.php?do=Art-Form%20Galerie&table=tl_artundform_werke_verwaltung',true);
-                        }
+      
 	
 		}
 			

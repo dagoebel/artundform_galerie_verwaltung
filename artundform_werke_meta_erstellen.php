@@ -68,32 +68,31 @@ class artundform_werke_meta_erstellen extends BackendModule
 	 */
 	protected function compile()
 	{
-	
-	function createMeta($pid,$ordner)
-	{
-			
-		$fh = fopen(TL_ROOT . '/' . $ordner . '/meta.txt', 'w');
-		$result = mysql_query("SELECT bild,kuenstler,titel,jahr,technik,groesse,preis,bildnr FROM `tl_artundform_werke_verwaltung` WHERE `pid`='".$pid."' ORDER BY bildnr");
-
-		while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-			fwrite($fh, $row[0]. ' = '.$row[1].'. '.$row[2].'<br>'.$row[3].'. '.$row[4].'. '.$row[5].' cm. '.$row[6].' EUR  |   | Anfrage zu Bild Nr. '.$row[7]. ' - '.$row[1].'. '.$row[2].' | Bild Nr. '.$row[7]);
-			fwrite($fh, "\n");
-	}
-	fclose($fh);
-	}
 
 		// Create files
 		if ($this->Input->post('FORM_SUBMIT') == 'artundform_werke_meta_erstellen')
 		{
-					
-			$pid = $this->id;
 			
-			$galerie = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE `id` = ".$pid);
-			$ordner = $galerie->ordner;
-			
-			createMeta($pid,$ordner);
-			
+				$pid = $this->id;
+
+		
+				$galerie = $this->Database->execute("SELECT * FROM tl_artundform_galerie_verwaltung WHERE `id` = ".$pid);
+				$ordner = $galerie->ordner;
+
+				$fh = fopen(TL_ROOT . '/' . $ordner . '/meta_rundgang.txt', 'w');
+				
+				$result = mysql_query("SELECT bild,kuenstler,titel,jahr,technik,groesse,preis,bildnr FROM `tl_artundform_werke_verwaltung` WHERE `pid`='".$pid."' ORDER BY bildnr");
+
+				while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+						fwrite($fh, $row[0]. ' = '.$row[1].'. '.$row[2].'<br>'.$row[3].'. '.$row[4].'. '.$row[5].' cm. '.$row[6].' EUR  |   | Anfrage zu Bild Nr. '.$row[7]. ' - '.$row[1].'. '.$row[2].' | Bild Nr. '.$row[7]);
+						fwrite($fh, "\n");
+				}
+				fclose($fh);
+				
+
 			$this->redirect('contao/main.php?do=Art-Form%20Galerie&table=tl_artundform_werke_verwaltung',true);
+			
+			
 			
 		}
 			

@@ -3,93 +3,119 @@
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
 
-<<?php echo $this->hl; ?>><?php echo $this->Werke[1]['_ausstellungsname']; ?></<?php echo $this->hl; ?>>
+<?php if ($this->Werke[1]['_darstellung']==1||$this->Werke[1]['_darstellung']=='3'): ?>
+	
 
-<?php if ($this->Werke[1]['_darstellung']==1): ?>
+	
 <table id="liste">
   <thead>
     <tr>
-      <th>Nr</th>
-      <th>Künstler</th>
-      <th>Titel</th>
-      <th>Jahr</th>
-      <th>Technik</th>
-      <th>Größe</th>
-	  <th>Preis</th>
-       <th>Anfrage</th>
+      <th class="col_1">Nr</th>
+      <th class="col_2">Künstler</th>
+      <th class="col_3">Titel</th>
+      <th class="col_4">Jahr</th>
+      <th class="col_5">Technik</th>
+      <th class="col_6">Größe</th>
+	  <th class="col_7">Preis</th>
+       <th class="col_8"></th>
     </tr>
   </thead>
   <tbody>
-<?php foreach ($this->Werke as $werk): ?>
-  <tr>
-  <td><?php echo $werk['bildnr']; ?>
+<?php	$i == 0; ?>
+<?php foreach ($this->Werke as $werk):
+$kuenstler = $werk['kuenstler'];
+	$titel = $werk['titel']; 
+
+	
+	$letters = array('ö', 'ä', 'ü', 'ß', 'é');
+	$replace   = array('oe', 'ae', 'ue', 'ss', 'e');
+	
+	$kuenstler  = str_replace($letters, $replace, $kuenstler);
+	$titel  = str_replace($letters, $replace, $titel);?>	
+<?php	if($i % 2 == 0) {
+	            $f = 'class="odd"';
+	        }
+	        else {
+	            $f = 'class="even"';
+	        }
+	        $i++; ?>
+  <tr <?php echo $f; ?>>
+  <td class="col_1"><?php echo $werk['bildnr']; ?>
   </td>
-   <td><?php echo $werk['kuenstler']; ?>
+   <td class="col_2"><?php echo $werk['kuenstler']; ?>
   </td>
-   <td><?php echo $werk['titel']; ?>
+   <td class="col_3"><a class="inline" href="#<?php echo $werk['bildnr']; ?>" title="<?php echo $werk['titel']; ?>"><?php echo $werk['titel']; ?></a>
   </td>
-   <td><?php echo $werk['jahr']; ?>
+   <td class="col_4"><?php echo $werk['jahr']; ?>
   </td>
-   <td><?php echo $werk['technik']; ?>
+   <td class="col_5"><?php echo $werk['technik']; ?>
   </td>
-   <td><?php echo $werk['groesse']; ?>
+   <td class="col_6"><?php echo $werk['groesse']; ?>
   </td>
-   <td><?php echo $werk['preis']; ?>
+   <td class="col_7"><?php echo $werk['preis']; ?>
   </td>
-   <td>
-   <a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo $werk['bildnr']; ?> - <?php echo $werk['kuenstler']; ?>. <?php echo $werk['titel']; ?>">&gt;&gt;</a>
+   <td class="col_8">
+   <a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo $werk['bildnr']; ?> - <?php echo $kuenstler; ?>. <?php echo $titel; ?>">Anfrage &raquo;</a>
   </td>
   </tr><?php endforeach; ?>
   </tbody>
 </table>
 <?php endif; ?>
 
-<?php if ($this->Werke[1]['_darstellung']=='2'): ?>
+
+
+
+
+
+
+
+
+
+<?php if ($this->Werke[1]['_darstellung']=='2'): ?>	
+
+	
 <?php foreach ($this->Werke as $werk): ?>
-<img src="<?php echo $werk['_ordner']; ?>/<?php echo $werk['bild']; ?>" alt="<?php echo $werk['titel']; ?>" title="<?php echo $werk['titel']; ?>">
+	
+	
+<a class="inline" href="#<?php echo $werk['bildnr']; ?>" title="<?php echo $werk['titel']; ?>">
+<div class="image_container" style="background-image: url(<?php echo $werk['bildKlein']; ?>);height: 110px;background-repeat: no-repeat;background-size: auto 100%;background-position: 50%;margin: 10px; width: 25%;"></div></a>
+
 <?php endforeach; ?>
+		
 <?php endif; ?>
 
-<?php if ($this->Werke[1]['_darstellung']=='3'): ?>
-<table id="liste">
-  <thead>
-    <tr>
-      <th>Nr</th>
-      <th>Künstler</th>
-      <th>Titel</th>
-      <th>Jahr</th>
-      <th>Technik</th>
-      <th>Größe</th>
-	  <th>Preis</th>
-	   <th>Bild</th>
-       <th>Anfrage</th>
-    </tr>
-  </thead>
-  <tbody>
-<?php foreach ($this->Werke as $werk): ?>
-  <tr>
-  <td><?php echo $werk['bildnr']; ?>
-  </td>
-   <td><?php echo $werk['kuenstler']; ?>
-  </td>
-   <td><?php echo $werk['titel']; ?>
-  </td>
-   <td><?php echo $werk['jahr']; ?>
-  </td>
-   <td><?php echo $werk['technik']; ?>
-  </td>
-   <td><?php echo $werk['groesse']; ?>
-  </td>
-   <td><?php echo $werk['preis']; ?>
-  </td>
-  <td>
-<img src="<?php echo $werk['_ordner']; ?>/<?php echo $werk['bild']; ?>" alt="<?php echo $werk['titel']; ?>" title="<?php echo $werk['titel']; ?>">
-  </td>
-   <td>
-   <a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo $werk['bildnr']; ?> - <?php echo $werk['kuenstler']; ?>. <?php echo $werk['titel']; ?>">&gt;&gt;</a>
-  </td>
-  </tr><?php endforeach; ?>
-  </tbody>
-</table>
-<?php endif; ?>
+
 </div>
+
+
+
+
+
+<?php foreach ($this->Werke as $werk):
+$kuenstler = $werk['kuenstler'];
+	$titel = $werk['titel']; 
+
+	
+	$letters = array('ö', 'ä', 'ü', 'ß', 'é');
+	$replace   = array('oe', 'ae', 'ue', 'ss', 'e');
+	
+	$kuenstler  = str_replace($letters, $replace, $kuenstler);
+	$titel  = str_replace($letters, $replace, $titel);?>
+
+<div style="display:none">
+			<div id="<?php echo $werk['bildnr']; ?>">
+				
+			<div class="image_container" style="background-image: url(<?php echo $werk['_ordner']; ?>/<?php echo $werk['bild']; ?>);"></div>
+			
+			<div class="bild_titel"><?php echo $werk['kuenstler']; ?>. <?php echo $werk['titel']; ?></div>
+			<div class="bild_beschreibung"><?php echo $werk['jahr']; ?>. <?php echo $werk['technik']; ?>. <?php echo $werk['groesse']; ?>. <?php echo $werk['preis']; ?></div>
+			<div class="anfrage"><a href="bestellung-anfrage.html?subject=Anfrage%20zu%20Bild%20Nr. <?php echo  htmlentities($werk['bildnr']); ?> - <?php echo $kuenstler; ?>. <?php echo $titel; ?>">Bild. Nr. <?php echo $werk['bildnr']; ?> - Anfrage &gt;&gt;</a></div>
+			
+			</div>
+		
+		
+</div>
+
+
+
+<?php endforeach; ?>

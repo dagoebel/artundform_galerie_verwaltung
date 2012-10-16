@@ -1,0 +1,121 @@
+/*
+    ColorBox Core Style:0
+    The following CSS is consistent between example themes and should not be altered.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;border-radius: 10px;
+	background-color: #727272;
+
+-webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.50);
+-khtml-box-shadow: 0 5px 20px rgba(0,0,0,0.50);
+-moz-box-shadow: 0 5px 20px rgba(0,0,0,0.50);
+box-shadow: 0 5px 20px rgba(0,0,0,0.50);
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#727272')";}
+#cboxOverlay{position:fixed; width:100%; height:100%; opacity: 0.95; background-color: #727272;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0; display: none !important}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box;}
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of ColorBox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+#cboxOverlay{background-color: #727272;}
+#colorbox{}
+    #cboxTopLeft{width:14px; height:14px;}
+    #cboxTopCenter{height:14px;}
+    #cboxTopRight{width:14px; height:14px;}
+    #cboxBottomLeft{width:14px; height:43px;}
+    #cboxBottomCenter{height:43px;}
+    #cboxBottomRight{width:14px; height:43px;}
+    #cboxMiddleLeft{width:14px;}
+    #cboxMiddleRight{width:14px;}
+    #cboxContent{background-color: #727272; overflow:visible;}
+        .cboxIframe{background:#fff;}
+        #cboxError{padding:50px; border:1px solid #ccc;}
+        #cboxLoadedContent{margin-bottom:5px;}
+        #cboxLoadingOverlay{background:url(images/loading_background.png) no-repeat center center;}
+        #cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
+        #cboxTitle{position:absolute; bottom:-25px; left:0; text-align:center; width:100%; font-weight:bold; color:#7C7C7C;}
+        #cboxCurrent{position:absolute; bottom:-25px; left:58px; font-weight:bold; color:#ddd;}
+        
+        #cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{position:absolute; bottom:-29px; background:url(images/controls.png) no-repeat 0px 0px; width:23px; height:23px; text-indent:-9999px;}
+        #cboxPrevious{left:0px; background-position: -51px -25px;}
+        #cboxPrevious:hover{background-position:-51px 0px;}
+        #cboxNext{left:27px; background-position:-75px -25px;}
+        #cboxNext:hover{background-position:-75px 0px;}
+        #cboxClose{right:0; background-position:-100px -25px;}
+        #cboxClose:hover{background-position:-100px 0px;}
+        
+        .cboxSlideshow_on #cboxSlideshow{background-position:-125px 0px; right:27px;}
+        .cboxSlideshow_on #cboxSlideshow:hover{background-position:-150px 0px;}
+        .cboxSlideshow_off #cboxSlideshow{background-position:-150px -25px; right:27px;}
+        .cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0px;}
+
+
+		.image_container{
+		margin-bottom: 10px;	
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 525px;
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+		background-position: 50%;
+		}
+		
+		.bild_titel{
+		color: #ddd;
+		text-align: center;
+		font-weight: bold;
+		line-height: 20px;
+		font-size: 1.2em;
+
+		}
+		
+		.bild_beschreibung{
+			color: #ddd;
+			text-align: center;
+			font-weight: bold;
+			line-height: 20px;
+			font-size: 1.1em;
+
+		}
+		
+		.anfrage a:hover, .anfrage a:active,{
+			text-decoration: underline;
+	
+
+		}
+		
+		.anfrage a:link{
+			text-decoration: none;
+				font-weight: bold;
+				line-height: 20px;
+				font-size: 1.1em;
+				color: #ddd;
+		
+
+		}
+	
+
+		.anfrage{
+		
+				
+				text-align: center;
+			
+		}
+		
+			.anfrage a{
+
+
+					text-align: center;
+					ccolor: #ddd;
+					}
+
+			}

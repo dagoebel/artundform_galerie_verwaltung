@@ -69,26 +69,41 @@ class artundform_galerie_verwaltung extends Module
     $objWerke = $this->Database->execute("SELECT * FROM tl_artundform_werke_verwaltung WHERE pid = '".$pid."' ORDER BY bildnr"); 
     while ($objWerke->next()) 
     { 
+	//$strReturn = $this->generateImage($this->getImage($ppid->ordner.'/'.$objWerke->bild, 300, 250, 'proportional'), 'asd');
+	//$strReturn = $this->generateImage($this->getImage('http://www.artundform.de/tl_files/artundform_content/galerie/ausstellungen/2012/guenther_guenther/werke_prototype/bild_01.jpg', 300, 250, 'proportional'), 'my first image');
+	
+		$strPath = $ppid->ordner.'/'.$objWerke->bild;
+		$strReturn = $strPath;
       $newArr = array 
       ( 
         'bildnr' => trim($objWerke->bildnr), 
         'kuenstler' => trim($objWerke->kuenstler), 
         'titel' => trim($objWerke->titel), 
         'jahr' => trim($objWerke->jahr), 
-        'technik' => $objWerke->technik, 
-        'groesse' => $objWerke->groesse, 
-        'preis' => $objWerke->preis, 
-        'bild' => $objWerke->bild,
-		'_jahr' => $moduleParams->artundform_jahr,
-		'_ausstellungsnr' => $moduleParams->artundform_ausstellungsnr,
-		'_darstellung' => $moduleParams->artundform_darstellung,
-		'_ausstellungsname' => $ppid->name,
-		'_ordner' => $ppid->ordner
+        'technik' => trim($objWerke->technik), 
+        'groesse' => trim($objWerke->groesse), 
+        'preis' => trim($objWerke->preis), 
+        'bild' => trim($objWerke->bild),
+		'bildKlein' => $strReturn,
+		'_jahr' => trim($moduleParams->artundform_jahr),
+		'_ausstellungsnr' => trim($moduleParams->artundform_ausstellungsnr),
+		'_darstellung' => trim($moduleParams->artundform_darstellung),
+		'_ausstellungsname' => trim($ppid->name),
+		'_ordner' => trim($ppid->ordner)
       ); 
 	$arrWerke[] = $newArr; 
     } 
     $this->Template->Werke = $arrWerke; 
-		
 	}
 }
 ?>
+
+
+
+
+
+
+
+
+
+
